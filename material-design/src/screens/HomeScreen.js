@@ -4,12 +4,12 @@ import { Button } from 'react-native-paper';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 
 
-const HomeScreen = () => {
+const HomeScreen = ({ navigation }) => {
     return (
         <View style={styles.container}>
             <Button 
                 mode='contained' 
-                onPress={() => {console.log('color view pressed')}}
+                onPress={() => {navigation.navigate('Color')}}
                 color='#1565C0'
                 icon='palette'
                 style={styles.button}>
@@ -17,7 +17,7 @@ const HomeScreen = () => {
            </Button>
            <Button 
                 mode='contained' 
-                onPress={() => {console.log('card view pressed')}}
+                onPress={() => {navigation.navigate('Card')}}
                 color='#1565C0'
                 icon={() => <MaterialCommunityIcons name='cards' color='white'/>}
                 style={styles.button}>
