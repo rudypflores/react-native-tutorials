@@ -1,25 +1,36 @@
 import React from 'react';
-import { View, Text, StyleSheet } from 'react-native';
-import { Card } from 'react-native-paper';
+import { View, StyleSheet, FlatList } from 'react-native';
+import CardList from '../components/cardList';
 
 
 const CardScreen = () => {
+
+    //Card information for list
+    const cardData = [{ title:'#1', subtitle:'number one' }, 
+                      { title:'#2', subtitle:'number two' },
+                      { title:'#3', subtitle:'number three' },
+                      { title:'#4', subtitle:'number four' },
+                      { title:'#5', subtitle:'number five' }];
+
     return (
         <View>
-            <Text>Card Screen</Text>
-            <Card>
-                <Card.Title 
-                    title='Sample Card' 
-                    subtitle='A sample of a simple material card'
-                />
-                
-            </Card>
+            {/* Missing a keyExtractor */}
+            <FlatList 
+                showsVerticalScrollIndicator={false}
+                data={cardData}
+                renderItem={({ item }) => {
+                    return (
+                        <CardList 
+                            title={item.title} 
+                            subtitle={item.subtitle}
+                        />
+                    );
+                }}
+            />
         </View>
     );
 };
 
-const styles = StyleSheet.create({
-
-});
+const styles = StyleSheet.create({});
 
 export default CardScreen;
