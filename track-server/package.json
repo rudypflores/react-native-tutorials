@@ -1,7 +1,7 @@
 {
   "name": "track-server",
   "version": "1.0.0",
-  "description": "",
+  "description": "server for react native app",
   "main": "index.js",
   "scripts": {
     "dev": "nodemon src/index.js"
